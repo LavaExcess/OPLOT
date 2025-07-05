@@ -48,7 +48,7 @@
 import Button from "@/components/ui/button/Button.vue"
 import Move from "@/components/ui/svg/ArrowMove.vue"
 import { ref } from 'vue'
-import services from '@/storage/services.json';
+import services from '@/assets/storage/services.json';
 
 const isModalOpen = ref(false)
 const selectedCard = ref(null)

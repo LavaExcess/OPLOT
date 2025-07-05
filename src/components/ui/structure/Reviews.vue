@@ -32,7 +32,7 @@ import {
 import type { EmblaOptionsType } from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import Ava from '@/components/ui/svg/Avatar.vue'
-import testimonials from '@/storage/testimonials.json'
+import testimonials from '@/assets/storage/testimonials.json'
 
 const carouselOptions: EmblaOptionsType = {
     loop: true,
@@ -45,12 +45,13 @@ const carouselOptions: EmblaOptionsType = {
 
 <style scoped>
 @import "tailwindcss";
+
 .carousel {
-    @apply flex flex-col items-center p-12 md:p-20 gap-12 md:gap-16 w-full bg-gray-50;
+    @apply flex flex-col items-center p-12 md:p-20 gap-12 md:gap-16 w-full bg-gray-200;
 }
 
 .carousel__wrap {
-    @apply w-full max-w-[90%];
+    @apply w-full md:max-w-[820px] max-w-[297px];
 }
 
 .carousel__content {
@@ -62,11 +63,11 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__card {
-    @apply flex flex-col items-center p-6 gap-4 w-full h-[327px] bg-white rounded-lg shadow-sm cursor-grab active:cursor-grabbing group-active:cursor-grabbing;
+    @apply flex flex-col items-center p-6 gap-4 w-full h-[327px] rounded-lg cursor-grab active:cursor-grabbing group-active:cursor-grabbing;
 }
 
 .carousel__avatar {
-    @apply flex justify-center items-center w-16 h-16 bg-gray-200 rounded-full;
+    @apply flex justify-center items-center w-16 h-16 bg-gray-300 rounded-full;
 }
 
 .carousel__text {
@@ -86,11 +87,11 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__nav {
-    @apply hidden md:flex size-10 absolute top-1/2 -translate-y-1/2 border-4 border-double border-gray-400 bg-transparent hover:border-gray-900 active:scale-95 active:border-gray-700 transition-all duration-200 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500;
+    @apply  md:flex size-10 absolute top-1/2 -translate-y-1/2 border-0 bg-gray-200 hover:border-gray-900 active:scale-95 active:border-gray-700 transition-all duration-200 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500;
 }
 
 .carousel__nav--prev {
-    @apply left-[-50px];
+    @apply left-[-50px] ;
 }
 
 .carousel__nav--next {
