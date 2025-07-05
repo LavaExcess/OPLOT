@@ -1,6 +1,5 @@
 <template>
     <section class="flex flex-col justify-center items-center px-4 py-12 gap-12 w-full bg-white md:px-20">
-
         <div class="flex flex-col items-center w-full gap-2 max-w-4xl">
             <div class="w-full font-bold text-xl text-center tracking-widest uppercase text-blue-900">
                 Переживаете за нас?
@@ -9,10 +8,7 @@
                 Оставьте анонимный отзыв
             </h2>
         </div>
-
-
         <div class="flex flex-col items-center gap-4 w-full max-w-2xl">
-
             <div class="flex flex-col items-start gap-1 w-full">
                 <label class="w-full font-normal text-sm text-gray-900">
                     Имя необязательно
@@ -22,8 +18,6 @@
                         placeholder="Имярек">
                 </div>
             </div>
-
-
             <div class="flex flex-col items-start gap-1 w-full">
                 <label class="w-full font-normal text-sm text-gray-900">
                     Комментарий желателен
@@ -34,8 +28,6 @@
                         placeholder="Что я вам скажу!"></textarea>
                 </div>
             </div>
-
-
             <div class="flex flex-row justify-center items-center w-full mt-4">
                 <Button
                     class="flex justify-center items-center px-6 py-3 w-full md:w-auto min-w-[250px] h-12 bg-blue-600 border-2 border-blue-600 cursor-pointer hover:bg-blue-700 transition-colors">

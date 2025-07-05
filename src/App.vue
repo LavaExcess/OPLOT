@@ -1,23 +1,32 @@
 <script setup lang="ts">
 
 import Header from "@/components/ui/structure/Header.vue";
-import Section1 from "@/components/ui/structure/Section1.vue";
-import Section2 from "@/components/ui/structure/Section2.vue";
-import Section3 from "@/components/ui/structure/Section3.vue";
-import Section4 from "@/components/ui/structure/Section4.vue";
-import Section5 from "@/components/ui/structure/Section5.vue";
+import Hero from "@/components/ui/structure/Hero.vue";
+import Stats from "@/components/ui/structure/Stats.vue";
+import Reviews from "@/components/ui/structure/Reviews.vue";
+import Services from "@/components/ui/structure/Services.vue";
+import Feedback from "@/components/ui/structure/Feedback.vue";
 </script>
 
 <template>
-
-
-    <Header />
-    <Section1 />
-    <Section2 />
-    <Section3 />
-    <Section4 />
-    <Section5 />
-
+    <header>
+        <Header />
+    </header>
+    <main>
+        <Hero />
+    </main>
+    <section>
+        <Stats />
+    </section>
+    <section>
+        <Reviews />
+    </section>
+    <section>
+        < <Services />
+    </section>
+    <section>
+        <Feedback />
+    </section>
 </template>
 
 <style scoped>
