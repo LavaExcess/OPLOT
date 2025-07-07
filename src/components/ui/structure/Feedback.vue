@@ -65,7 +65,7 @@ import Button from "@/components/ui/button/Button.vue"
 }
 
 .feedback__form {
-    @apply flex flex-col items-center gap-4 w-full max-w-2xl;
+    @apply flex flex-col items-center gap-4 w-full max-w-[700px] ;
 }
 
 .feedback__group {
