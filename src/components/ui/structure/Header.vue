@@ -4,7 +4,8 @@
             <div class="header__logo-group">
 
                 <div class="header__logo">
-                    <DarkMode />
+                    <Poop />
+                 
                     <!--   <Logo />-->
                 </div>
                 <div class="header__title-group">
@@ -46,6 +47,7 @@ export default {
 <script setup>
 import Logo from "@/components/ui/svg/Logo.vue"
 import DarkMode from "@/components/ui/structure/DarkMode.vue";
+import Poop from "@/components/ui/svg/PoopLogo.vue";
 </script>
 
 <style scoped>

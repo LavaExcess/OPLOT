@@ -6,16 +6,14 @@ import Stats from "@/components/ui/structure/Stats.vue";
 import Reviews from "@/components/ui/structure/Reviews.vue";
 import Services from "@/components/ui/structure/Services.vue";
 import Feedback from "@/components/ui/structure/Feedback.vue";
-
-
+import DarkMode from "@/components/ui/structure/DarkMode.vue";
 </script>
 
 <template>
+    <DarkMode />
     <header>
         <Header />
-
     </header>
-
     <main>
         <Hero />
     </main>
