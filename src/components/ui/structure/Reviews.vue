@@ -47,7 +47,7 @@ const carouselOptions: EmblaOptionsType = {
 @import "tailwindcss";
 
 .carousel {
-    @apply flex flex-col items-center p-12 md:p-20 gap-12 md:gap-16 w-full bg-gray-200;
+    @apply flex flex-col items-center p-12 md:p-20 gap-12 md:gap-16 w-full bg-[color:var(--muted)];
 }
 
 .carousel__wrap {
@@ -63,15 +63,15 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__card {
-    @apply flex flex-col items-center p-6 gap-4 w-full h-[327px] rounded-lg cursor-grab active:cursor-grabbing group-active:cursor-grabbing;
+    @apply flex flex-col items-center p-6 gap-4 w-full h-[327px] rounded-lg cursor-grab active:cursor-grabbing group-active:cursor-grabbing bg-[color:var(--card)];
 }
 
 .carousel__avatar {
-    @apply flex justify-center items-center w-16 h-16 bg-gray-300 rounded-full;
+    @apply flex justify-center items-center w-16 h-16 bg-[color:var(--muted)] rounded-full;
 }
 
 .carousel__text {
-    @apply w-full font-normal text-base md:text-lg text-center text-gray-900 select-none;
+    @apply w-full font-normal text-base md:text-lg text-center text-[color:var(--foreground)] select-none;
 }
 
 .carousel__info {
@@ -79,19 +79,19 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__title {
-    @apply w-full font-bold text-xl md:text-2xl text-center text-gray-900 select-none;
+    @apply w-full font-bold text-xl md:text-2xl text-center text-[color:var(--foreground)] select-none;
 }
 
 .carousel__subtitle {
-    @apply w-full font-normal text-base md:text-lg text-center text-gray-900 select-none;
+    @apply w-full font-normal text-base md:text-lg text-center text-[color:var(--foreground)] select-none;
 }
 
 .carousel__nav {
-    @apply  md:flex size-10 absolute top-1/2 -translate-y-1/2 border-0 bg-gray-200 hover:border-gray-900 active:scale-95 active:border-gray-700 transition-all duration-200 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500;
+    @apply md:flex size-10 absolute top-1/2 -translate-y-1/2 border-0 bg-[color:var(--muted)] hover:border-[color:var(--foreground)] active:scale-95 active:border-[color:var(--ring)] transition-all duration-200 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)];
 }
 
 .carousel__nav--prev {
-    @apply left-[-50px] ;
+    @apply left-[-50px];
 }
 
 .carousel__nav--next {

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import Header from "@/components/ui/structure/Header.vue";
 import Hero from "@/components/ui/structure/Hero.vue";
@@ -6,12 +6,16 @@ import Stats from "@/components/ui/structure/Stats.vue";
 import Reviews from "@/components/ui/structure/Reviews.vue";
 import Services from "@/components/ui/structure/Services.vue";
 import Feedback from "@/components/ui/structure/Feedback.vue";
+
+
 </script>
 
 <template>
     <header>
         <Header />
+
     </header>
+
     <main>
         <Hero />
     </main>
@@ -22,7 +26,7 @@ import Feedback from "@/components/ui/structure/Feedback.vue";
         <Reviews />
     </section>
     <section>
-        < <Services />
+        <Services />
     </section>
     <section>
         <Feedback />

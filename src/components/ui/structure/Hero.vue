@@ -37,12 +37,11 @@ import Button from "@/components/ui/button/Button.vue";
 import Hero from "@/components/ui/svg/Hero.vue";
 </script>
 
-
 <style scoped>
 @import "tailwindcss";
 
 .hero {
-    @apply flex flex-col md:flex-row items-center px-4 md:px-20 py-12 md:py-[160px] gap-8 md:gap-20 w-full min-h-screen md:h-screen bg-gray-50 z-0;
+    @apply flex flex-col md:flex-row items-center px-4 md:px-20 py-12 md:py-[160px] gap-8 md:gap-20 w-full min-h-screen md:h-screen bg-[color:var(--background)] z-0;
 }
 
 .hero__SVG {
@@ -62,19 +61,19 @@ import Hero from "@/components/ui/svg/Hero.vue";
 }
 
 .hero__title {
-    @apply w-full font-bold text-4xl md:text-[2.5rem] text-gray-900 text-center md:text-left;
+    @apply w-full font-bold text-4xl md:text-[2.5rem] text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__subtitle {
-    @apply w-full font-bold text-2xl md:text-[2rem] text-gray-900 text-center md:text-left;
+    @apply w-full font-bold text-2xl md:text-[2rem] text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__description {
-    @apply w-full lg:w-[70%] font-normal text-base md:text-lg text-gray-900 text-center md:text-left;
+    @apply w-full lg:w-[70%] font-normal text-base md:text-lg text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__highlight {
-    @apply font-bold;
+    @apply font-bold text-[color:var(--primary)];
 }
 
 .hero__actions {
@@ -82,10 +81,10 @@ import Hero from "@/components/ui/svg/Hero.vue";
 }
 
 .hero__button {
-    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[184px] h-10 md:h-14 bg-blue-600 border-2 border-blue-600 cursor-pointer;
+    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[184px] h-10 md:h-14 bg-[color:var(--primary)] border-2 border-[color:var(--primary)] cursor-pointer;
 }
 
 .hero__button-text {
-    @apply px-2 md:px-4 font-medium text-sm tracking-[0.5px] text-white;
+    @apply px-2 md:px-4 font-medium text-sm tracking-[0.5px] text-[color:var(--primary-foreground)];
 }
 </style>

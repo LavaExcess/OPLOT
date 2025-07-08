@@ -41,15 +41,11 @@ import Button from "@/components/ui/button/Button.vue"
 </script>
 
 
-
 <style scoped>
 @import "tailwindcss";
 
-
-
-
 .feedback {
-    @apply flex flex-col justify-center items-center px-4 py-12 gap-12 w-full bg-white md:px-20;
+    @apply flex flex-col justify-center items-center px-4 py-12 gap-12 w-full bg-[color:var(--card)] md:px-20;
 }
 
 .feedback__header {
@@ -57,15 +53,15 @@ import Button from "@/components/ui/button/Button.vue"
 }
 
 .feedback__title {
-    @apply w-full font-bold text-xl text-center tracking-widest uppercase text-blue-900;
+    @apply w-full font-bold text-xl text-center tracking-widest uppercase text-[color:var(--primary)];
 }
 
 .feedback__subtitle {
-    @apply w-full font-bold text-3xl md:text-4xl text-center text-gray-900;
+    @apply w-full font-bold text-3xl md:text-4xl text-center text-[color:var(--foreground)];
 }
 
 .feedback__form {
-    @apply flex flex-col items-center gap-4 w-full max-w-[700px] ;
+    @apply flex flex-col items-center gap-4 w-full max-w-[700px];
 }
 
 .feedback__group {
@@ -73,23 +69,23 @@ import Button from "@/components/ui/button/Button.vue"
 }
 
 .feedback__label {
-    @apply w-full font-normal text-sm text-gray-900;
+    @apply w-full font-normal text-sm text-[color:var(--foreground)];
 }
 
 .feedback__input-wrapper {
-    @apply flex flex-row items-center w-full h-12 px-4 gap-2 bg-gray-50 border-b border-gray-300;
+    @apply flex flex-row items-center w-full h-12 px-4 gap-2 bg-[color:var(--input)] border-b border-[color:var(--border)];
 }
 
 .feedback__input {
-    @apply w-full font-normal text-base text-gray-500 bg-transparent outline-none;
+    @apply w-full font-normal text-base text-[color:var(--muted-foreground)] bg-transparent outline-none;
 }
 
 .feedback__textarea-wrapper {
-    @apply flex flex-row items-start w-full min-h-24 px-4 py-3.5 gap-2 bg-gray-50 border-b border-gray-300;
+    @apply flex flex-row items-start w-full min-h-24 px-4 py-3.5 gap-2 bg-[color:var(--input)] border-b border-[color:var(--border)];
 }
 
 .feedback__textarea {
-    @apply w-full font-normal text-base text-gray-500 bg-transparent outline-none resize-none;
+    @apply w-full font-normal text-base text-[color:var(--muted-foreground)] bg-transparent outline-none resize-none;
 }
 
 .feedback__submit {
@@ -97,10 +93,10 @@ import Button from "@/components/ui/button/Button.vue"
 }
 
 .feedback__button {
-    @apply flex justify-center items-center px-6 py-3 w-full md:w-auto min-w-[250px] h-12 bg-blue-600 border-2 border-blue-600 cursor-pointer hover:bg-blue-700 transition-colors;
+    @apply flex justify-center items-center px-6 py-3 w-full md:w-auto min-w-[250px] h-12 bg-[color:var(--primary)] border-2 border-[color:var(--primary)] cursor-pointer hover:bg-[color:var(--primary)]/90 transition-colors;
 }
 
 .feedback__button-text {
-    @apply font-medium text-sm text-white;
+    @apply font-medium text-sm text-[color:var(--primary-foreground)];
 }
 </style>

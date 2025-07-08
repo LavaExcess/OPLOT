@@ -2,8 +2,10 @@
     <header class="header">
         <div class="header__container">
             <div class="header__logo-group">
+
                 <div class="header__logo">
-                    <Logo />
+                    <DarkMode />
+                    <!--   <Logo />-->
                 </div>
                 <div class="header__title-group">
                     <div class="header__title">Щенки бульдога</div>
@@ -30,6 +32,8 @@
 </template>
 
 <script>
+
+
 export default {
     data() {
         return {
@@ -41,13 +45,15 @@ export default {
 
 <script setup>
 import Logo from "@/components/ui/svg/Logo.vue"
+import DarkMode from "@/components/ui/structure/DarkMode.vue";
 </script>
 
 <style scoped>
 @import "tailwindcss";
 
 .header {
-    @apply w-full h-[72px] bg-white shadow-sm fixed top-0 left-0 z-50;
+    @apply w-full h-[72px] fixed top-0 left-0 z-50 bg-[color:var(--card)];
+    box-shadow: 0 1px 2px 0 hsl(var(--shadow-color));
 }
 
 .header__container {
@@ -59,7 +65,7 @@ import Logo from "@/components/ui/svg/Logo.vue"
 }
 
 .header__logo {
-    @apply flex-shrink-0 w-6 h-6 pt-2;
+    @apply flex-shrink-0 pt-1;
 }
 
 .header__title-group {
@@ -67,7 +73,8 @@ import Logo from "@/components/ui/svg/Logo.vue"
 }
 
 .header__title {
-    @apply font-bold text-[24px] w-full text-gray-600;
+    @apply font-bold text-[24px] w-full;
+    color: hsl(var(--foreground));
 }
 
 .header__subtitle {
@@ -77,9 +84,11 @@ import Logo from "@/components/ui/svg/Logo.vue"
 .header__nav {
     @apply hidden md:flex items-center space-x-6;
 }
+
 .header__link,
 .header__mobile-link {
-    @apply text-gray-600 hover:text-gray-900;
+    color: hsl(var(--foreground));
+
 }
 
 .header__burger {
@@ -91,7 +100,8 @@ import Logo from "@/components/ui/svg/Logo.vue"
 }
 
 .header__mobile-menu {
-    @apply md:hidden absolute top-[72px] left-0 w-full bg-white shadow-md py-2 px-4;
+    @apply md:hidden absolute top-[72px] left-0 w-full shadow-md py-2 px-4;
+    background-color: hsl(var(--header-bg));
 }
 
 .header__mobile-link {

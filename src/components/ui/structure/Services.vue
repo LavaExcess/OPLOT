@@ -65,11 +65,11 @@ const closeModal = () => {
     document.body.style.overflow = 'auto'
 }
 </script>
-
 <style scoped>
 @import "tailwindcss";
+
 .info {
-    @apply box-border flex flex-col items-center bg-white border-gray-200 px-4 py-12 gap-8 lg:px-20 lg:py-20 lg:gap-16 w-full mx-auto;
+    @apply box-border flex flex-col items-center bg-[color:var(--card)] border-[color:var(--border)] px-4 py-12 gap-8 lg:px-20 lg:py-20 lg:gap-16 w-full mx-auto;
 }
 
 .info__header {
@@ -81,11 +81,11 @@ const closeModal = () => {
 }
 
 .info__subtitle {
-    @apply w-full font-bold text-xl text-center tracking-widest uppercase text-blue-900;
+    @apply w-full font-bold text-xl text-center tracking-widest uppercase text-[color:var(--primary)];
 }
 
 .info__title {
-    @apply w-full font-bold text-2xl text-center text-gray-900 md:text-4xl;
+    @apply w-full font-bold text-2xl text-center text-[color:var(--foreground)] md:text-4xl;
 }
 
 .info__grid {
@@ -93,11 +93,11 @@ const closeModal = () => {
 }
 
 .info__card {
-    @apply flex flex-col items-start bg-white border border-gray-200 w-full;
+    @apply flex flex-col items-start bg-[color:var(--card)] border border-[color:var(--border)] w-full;
 }
 
 .info__image-placeholder {
-    @apply flex justify-center items-center w-full h-[220px] bg-gray-200;
+    @apply flex justify-center items-center w-full h-[220px] bg-[color:var(--muted)];
 }
 
 .info__content {
@@ -105,11 +105,11 @@ const closeModal = () => {
 }
 
 .info__card-title {
-    @apply w-full font-bold text-xl text-gray-900;
+    @apply w-full font-bold text-xl text-[color:var(--foreground)];
 }
 
 .info__card-text {
-    @apply w-full font-normal text-sm text-gray-900 md:text-base;
+    @apply w-full font-normal text-sm text-[color:var(--foreground)] md:text-base;
 }
 
 .info__actions {
@@ -121,36 +121,36 @@ const closeModal = () => {
 }
 
 .info__button-text {
-    @apply font-medium text-sm flex tracking-wider text-blue-600;
+    @apply font-medium text-sm flex tracking-wider text-[color:var(--primary)];
 }
 
 .info__main-button {
-    @apply flex justify-center items-center px-3 py-2 w-[20%] min-w-[150px] h-12 bg-blue-600 border-2 border-blue-600 cursor-pointer;
+    @apply flex justify-center items-center px-3 py-2 w-[20%] min-w-[150px] h-12 bg-[color:var(--primary)] border-2 border-[color:var(--primary)] cursor-pointer;
 }
 
 .info__main-button-text {
-    @apply px-2 md:px-4 font-medium text-sm text-white;
+    @apply px-2 md:px-4 font-medium text-sm text-[color:var(--primary-foreground)];
 }
 
 /* Модалка */
 
 .info__modal-backdrop {
-    @apply fixed inset-0 bg-gray-800 flex justify-center items-center z-[1000];
+    @apply fixed inset-0 bg-[color:var(--ring)]/90 flex justify-center items-center z-[1000];
 }
 
 .info__modal-content {
-    @apply bg-white p-6 rounded-lg w-[85%] h-[85%] relative mx-4;
+    @apply bg-[color:var(--card)] p-6 rounded-lg w-[85%] h-[85%] relative mx-4;
 }
 
 .info__modal-close {
-    @apply absolute top-2 right-2 text-4xl cursor-pointer;
+    @apply absolute top-2 right-2 text-4xl cursor-pointer text-[color:var(--foreground)];
 }
 
 .info__modal-title {
-    @apply font-bold text-xl mb-4 text-gray-900;
+    @apply font-bold text-xl mb-4 text-[color:var(--foreground)];
 }
 
 .info__modal-text {
-    @apply font-normal text-base text-gray-900;
+    @apply font-normal text-base text-[color:var(--foreground)];
 }
 </style>

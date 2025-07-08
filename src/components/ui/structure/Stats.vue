@@ -42,8 +42,9 @@ const sItems = [
 
 <style scoped>
 @import "tailwindcss";
+
 .stats {
-    @apply box-border flex flex-col items-center px-4 py-[40px] gap-12 w-full h-auto min-h-[300px] bg-white border-b border-gray-300 flex-none z-10;
+    @apply box-border flex flex-col items-center px-4 py-[40px] gap-12 w-full h-auto min-h-[300px] bg-[color:var(--card)] border-b border-[color:var(--border)] flex-none z-10;
 }
 
 .stats__container {
@@ -55,11 +56,11 @@ const sItems = [
 }
 
 .stats__title {
-    @apply w-full font-bold text-4xl text-center text-gray-900;
+    @apply w-full font-bold text-4xl text-center text-[color:var(--foreground)];
 }
 
 .stats__description {
-    @apply w-full font-normal text-lg text-center text-gray-900 mt-2;
+    @apply w-full font-normal text-lg text-center text-[color:var(--foreground)] mt-2;
 }
 
 .stats__items {
@@ -67,7 +68,7 @@ const sItems = [
 }
 
 .stats__item {
-    @apply flex flex-col items-center p-4 gap-4 w-[90%] lg:w-[302px] h-auto min-h-[80px] bg-white border border-gray-300 rounded-none flex-1;
+    @apply flex flex-col items-center p-4 gap-4 w-[90%] lg:w-[302px] h-[100px] bg-[color:var(--card)] border border-[color:var(--border)] rounded-none flex-1;
 }
 
 .stats__item-content {
@@ -75,7 +76,7 @@ const sItems = [
 }
 
 .stats__icon-wrapper {
-    @apply flex-shrink-0 flex justify-center items-center w-12 h-12 bg-gray-300;
+    @apply flex-shrink-0 flex justify-center items-center w-12 h-12 bg-[color:var(--muted)];
 }
 
 .stats__text-wrapper {
@@ -83,10 +84,10 @@ const sItems = [
 }
 
 .stats__number {
-    @apply w-full font-bold text-xl text-gray-900 truncate;
+    @apply w-full font-bold text-xl text-[color:var(--foreground)] truncate;
 }
 
 .stats__text {
-    @apply w-full font-normal text-base text-gray-600 line-clamp-2;
+    @apply w-full font-normal text-base text-[color:var(--muted-foreground)] line-clamp-2;
 }
 </style>
