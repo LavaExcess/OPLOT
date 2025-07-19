@@ -32,14 +32,18 @@
         <Button class="info__main-button">
             <span class="info__main-button-text">Text</span>
         </Button>
+
+        
         <!-- Модалка -->
-        <div v-if="isModalOpen" class="info__modal-backdrop" @click.self="closeModal">
-            <div class="info__modal-content">
-                <button class="info__modal-close" @click="closeModal">&times;</button>
-                <h3 class="info__modal-title">{{ selectedCard.title }}</h3>
-                <p class="info__modal-text">{{ selectedCard.fullDescription }}</p>
+        <section class="cards">
+            <div v-if="isModalOpen" class="info__modal-backdrop" @click.self="closeModal">
+                <div class="info__modal-content">
+                    <button class="info__modal-close" @click="closeModal">&times;</button>
+                    <h3 class="info__modal-title">{{ selectedCard.title }}</h3>
+                    <p class="info__modal-text">{{ selectedCard.fullDescription }}</p>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
 </template>
 
@@ -47,8 +51,8 @@
 
 import Button from "@/components/ui/button/Button.vue"
 import Move from "@/components/ui/svg/ArrowMove.vue"
-import { ref } from 'vue'
-import services from '@/assets/storage/services.json';
+import { ref, onMounted } from 'vue'
+import services from '@/assets/storage/services.json'
 
 const isModalOpen = ref(false)
 const selectedCard = ref(null)
@@ -58,11 +62,28 @@ const openModal = (card) => {
     selectedCard.value = card
     isModalOpen.value = true
     document.body.style.overflow = 'hidden'
+    window.history.pushState({}, '', `/${card.urlId}`)
 }
 
 const closeModal = () => {
     isModalOpen.value = false
+    selectedCard.value = null
     document.body.style.overflow = 'auto'
+    window.history.pushState({}, '', '/')
+}
+
+onMounted(() => {
+    const urlId = window.location.pathname.slice(1)
+    if (urlId) {
+        const card = cards.value.find(c => c.urlId === urlId)
+        if (card) {
+            openModal(card)
+        }
+    }
+})
+
+const handleCardClick = (card) => {
+    openModal(card)
 }
 </script>
 <style scoped>
