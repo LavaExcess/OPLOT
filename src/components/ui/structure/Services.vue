@@ -1,39 +1,37 @@
 <template>
     <section class="info">
-        <!-- Текст -->
-        <div class="info__header">
-            <div class="info__title-wrapper">
-                <div class="info__subtitle">Почему появилась эта страница?</div>
-                <h2 class="info__title">
-                    Местные власти не могут решить нашу проблему
-                </h2>
+        <!-- Обертка для основной карточки и сетки -->
+        <div class="info__wrapper">
+            <!-- Основная карточка (слева) -->
+            <div class="info__main-card">
+                <div class="info__card">
+                    <div class="info__content">
+                        <h3 class="info__card1-title">Один кирпич — три материала</h3>
+                        <p class="info__card1-text">Колотый кирпич позволяет оформлять объекты недвижимости в едином
+                            стиле, формируя единый ансамбль из вашего дома, ограды и окружающих дорожек.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info__grid">
+                <div v-for="(card, index) in cards" :key="index" class="info__card">
+                    <div class="info__image-placeholder"></div>
+                    <div class="info__content">
+                        <h3 class="info__card-title">{{ card.title }}</h3>
+                        <p class="info__card-text">{{ card.description }}</p>
+                    </div>
+                    <div class="info__actions">
+                        <button @click="openModal(card)" class="info__button">
+                            <span class="info__button-text">
+                                Подробнее
+                                <Move />
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Контейнер карточек -->
-        <div class="info__grid">
-            <div v-for="(card, index) in cards" :key="index" class="info__card">
-                <div class="info__image-placeholder"></div>
-                <div class="info__content">
-                    <h3 class="info__card-title">{{ card.title }}</h3>
-                    <p class="info__card-text">{{ card.description }}</p>
-                </div>
-                <div class="info__actions">
-                    <button @click="openModal(card)" class="info__button">
-                        <span class="info__button-text">
-                            Подробнее
-                            <Move />
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Кнопка -->
-        <Button class="info__main-button">
-            <span class="info__main-button-text">Text</span>
-        </Button>
-
-        
         <!-- Модалка -->
         <section class="cards">
             <div v-if="isModalOpen" class="info__modal-backdrop" @click.self="closeModal">
@@ -48,7 +46,6 @@
 </template>
 
 <script setup>
-
 import Button from "@/components/ui/button/Button.vue"
 import Move from "@/components/ui/svg/ArrowMove.vue"
 import { ref, onMounted } from 'vue'
@@ -86,36 +83,30 @@ const handleCardClick = (card) => {
     openModal(card)
 }
 </script>
+
 <style scoped>
 @import "tailwindcss";
 
 .info {
-    @apply box-border flex flex-col items-center bg-[color:var(--card)] border-[color:var(--border)] px-4 py-12 gap-8 lg:px-20 lg:py-20 lg:gap-16 w-full mx-auto;
+    @apply box-border flex flex-col bg-[color:var(--card)] border-[color:var(--border)] px-4 py-12 gap-8 w-full mx-auto;
 }
 
-.info__header {
-    @apply flex flex-col items-start w-full gap-6 md:gap-12;
+.info__wrapper {
+    @apply flex flex-col md:flex-row gap-8 w-full;
 }
 
-.info__title-wrapper {
-    @apply flex flex-col items-center w-full gap-2;
-}
-
-.info__subtitle {
-    @apply w-full font-bold text-xl text-center tracking-widest uppercase text-[color:var(--primary)];
-}
-
-.info__title {
-    @apply w-full font-bold text-2xl text-center text-[color:var(--foreground)] md:text-4xl;
+.info__main-card {
+    @apply w-full md:w-1/3;
 }
 
 .info__grid {
-    @apply grid grid-cols-2 gap-4 w-full h-full lg:grid-cols-4 md:gap-8 justify-items-center;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full md:w-full;
 }
 
 .info__card {
-    @apply flex flex-col items-start bg-[color:var(--card)] border border-[color:var(--border)] w-full;
+    @apply flex flex-col items-start bg-[color:var(--card)] border border-[color:var(--border)] w-full h-full;
 }
+
 
 .info__image-placeholder {
     @apply flex justify-center items-center w-full h-[220px] bg-[color:var(--muted)];
@@ -133,8 +124,17 @@ const handleCardClick = (card) => {
     @apply w-full font-normal text-sm text-[color:var(--foreground)] md:text-base;
 }
 
+.info__card1-title {
+    @apply w-full font-bold text-5xl text-[color:var(--foreground)];
+}
+
+.info__card1-text {
+    @apply w-full font-normal text-2xl text-[color:var(--foreground)];
+}
+
+
 .info__actions {
-    @apply px-4;
+    @apply px-4 pb-4;
 }
 
 .info__button {
@@ -145,16 +145,7 @@ const handleCardClick = (card) => {
     @apply font-medium text-sm flex tracking-wider text-[color:var(--primary)];
 }
 
-.info__main-button {
-    @apply flex justify-center items-center px-3 py-2 w-[20%] min-w-[150px] h-12 bg-[color:var(--primary)] border-2 border-[color:var(--primary)] cursor-pointer;
-}
-
-.info__main-button-text {
-    @apply px-2 md:px-4 font-medium text-sm text-[color:var(--primary-foreground)];
-}
-
 /* Модалка */
-
 .info__modal-backdrop {
     @apply fixed inset-0 bg-[color:var(--ring)]/90 flex justify-center items-center z-[1000];
 }

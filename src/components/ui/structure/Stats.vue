@@ -2,42 +2,50 @@
     <section class="stats">
         <div class="stats__container">
             <div class="stats__header">
-                <h2 class="stats__title">Мы разводим — вы страдаете!</h2>
+                <h2 class="stats__title">ФАСАДЫ</h2>
                 <p class="stats__description">
-                    С щенками редко гуляют, поэтому они вынуждены писать и какать прямо в квартире своей хозяйки. <br />
-                    А еще им немножко скучно, поэтому они грызут гибкую подводку водопровода и воют в постоянно открытое
-                    окно.
+                    Александровский кирпич <br />
+                    создан для вашего дома
                 </p>
             </div>
-            <div class="stats__items">
-                <div class="stats__item" v-for="(item, idx) in sItems" :key="idx">
-                    <div class="stats__item-content">
-                        <div class="stats__icon-wrapper">
-                            <component :is="item.svg" class="stats__icon" />
-                        </div>
-                        <div class="stats__text-wrapper">
-                            <h3 class="stats__number">{{ item.number }}</h3>
-                            <p class="stats__text">{{ item.text }}</p>
-                        </div>
+            <div class="info-grid">
+                <div v-for="(feature, index) in features" :key="index" class="feature-card">
+                    <div class="feature-icon">
+                        <component :is="getIconComponent(feature.icon)" />
                     </div>
+                    <h3 class="feature-title">{{ feature.title }}</h3>
+                    <p class="feature-text">{{ feature.text }}</p>
                 </div>
             </div>
+            <Button class="hero__button ">
+                <span class="hero__button-text">
+                    Предварительный расчёт
+                </span>
+            </Button>
         </div>
     </section>
 </template>
 
 <script setup>
-import Sticker from "@/components/ui/svg/Sticker.vue"
-import Sheet from "@/components/ui/svg/Sheet.vue"
-import Pizza from "@/components/ui/svg/Pizza.vue"
-import Human from "@/components/ui/svg/Human.vue"
+import { ref } from 'vue'
+import featuresData from '@/assets/storage/features.json'
+import Suitcase from '@/components/ui/svg/Suitcase.vue'
+import Bag from '@/components/ui/svg/Bag.vue'
+import Pulse from '@/components/ui/svg/Pulse.vue'
+import Car from '@/components/ui/svg/Car.vue'
+import Button from "@/components/ui/button/Button.vue";
+const features = ref(featuresData)
 
-const sItems = [
-    { svg: Sticker, number: "3", text: "Затоплены нечистотами" },
-    { svg: Sheet, number: "20+", text: "Страдают от страшной вони" },
-    { svg: Pizza, number: "200+", text: "Страдают от ночного визга" },
-    { svg: Human, number: "10%", text: "Квартиры теряют в цене *" },
-]
+const iconComponents = {
+    Suitcase,
+    Bag,
+    Pulse,
+    Car
+}
+
+const getIconComponent = (iconName) => {
+    return iconComponents[iconName] || null
+}
 </script>
 
 <style scoped>
@@ -56,38 +64,37 @@ const sItems = [
 }
 
 .stats__title {
-    @apply w-full font-bold text-4xl text-center text-[color:var(--foreground)];
+    @apply w-full font-bold text-6xl text-center text-[color:var(--foreground)];
 }
 
 .stats__description {
-    @apply w-full font-normal text-lg text-center text-[color:var(--foreground)] mt-2;
+    @apply w-full font-normal text-4xl text-center text-[color:var(--foreground)] mt-2;
 }
 
-.stats__items {
-    @apply flex flex-col lg:flex-row items-center justify-center w-full gap-6 h-auto;
+
+.info-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 w-2/3;
 }
 
-.stats__item {
-    @apply flex flex-col items-center p-4 gap-4 w-[90%] lg:w-[302px] h-[100px] bg-[color:var(--card)] border border-[color:var(--border)] rounded-none flex-1;
+.feature-card {
+    @apply bg-[color:var(--card)] p-8 rounded-xl shadow-sm border border-[color:var(--border)] flex flex-col items-center text-center;
 }
 
-.stats__item-content {
-    @apply flex flex-row items-center w-full gap-4 h-auto;
+
+.feature-title {
+    @apply text-xl font-semibold text-[color:var(--foreground)] mb-3;
 }
 
-.stats__icon-wrapper {
-    @apply flex-shrink-0 flex justify-center items-center w-12 h-12 bg-[color:var(--muted)];
+.feature-text {
+    @apply text-[color:var(--foreground)];
 }
 
-.stats__text-wrapper {
-    @apply flex flex-col items-start w-full overflow-hidden;
+
+.hero__button {
+    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[188px] h-10 md:h-12 border-2 border-[color:var(--border2)] cursor-pointer;
 }
 
-.stats__number {
-    @apply w-full font-bold text-xl text-[color:var(--foreground)] truncate;
-}
-
-.stats__text {
-    @apply w-full font-normal text-base text-[color:var(--muted-foreground)] line-clamp-2;
+.hero__button-text {
+    @apply px-2 md:px-4 font-medium text-sm tracking-[0.5px];
 }
 </style>

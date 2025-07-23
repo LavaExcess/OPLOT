@@ -18,14 +18,16 @@ import DarkMode from "@/components/ui/structure/DarkMode.vue";
         <Hero />
     </main>
     <section>
+        <Services />
+    </section>
+    <section>
         <Stats />
     </section>
     <section>
         <Reviews />
     </section>
-    <section>
-        <Services />
-    </section>
+
+
     <section>
         <Feedback />
     </section>

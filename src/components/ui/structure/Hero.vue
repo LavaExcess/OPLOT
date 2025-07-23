@@ -1,33 +1,38 @@
 <template>
     <section class="hero">
         <!-- SVG -->
-        <div class="hero__SVG">
-            <Hero />
-        </div>
+
         <!-- TEXT -->
         <div class="hero__text">
             <div class="hero__intro">
                 <div class="hero__heading-group">
                     <h1 class="hero__title">
-                        Убийственная вонь
+                        Уникальный цветной кирпич
                     </h1>
                     <h2 class="hero__subtitle">
-                        в доме Маринеско
+                        ТРИ-В-ОДНОМ
                     </h2>
                 </div>
                 <p class="hero__description">
-                    Эта история о том, как жительница Кронштадта занялась разведением щенков французского бульдога в
-                    своей квартире, превращая жизнь всех соседей по подъезду в
-                    <span class="hero__highlight">вонючий и визгливый ад!</span>
+                    Собственное производство уникального цветного кирпича, который годится одновременно для отделки
+                    фасадов, монтажа оград и укладки дорожек.
                 </p>
             </div>
             <div class="hero__actions">
-                <Button class="hero__button">
+                <Button class="hero__button ">
                     <span class="hero__button-text">
-                        Text
+                        Личный кабинет
+                    </span>
+                </Button>
+                <Button class="hero__button bg-[color:var(--background)] text-[color:var(--border2)]">
+                    <span class="hero__button-text">
+                        Связаться с нами
                     </span>
                 </Button>
             </div>
+        </div>
+        <div class="hero__SVG">
+            <Hero />
         </div>
     </section>
 </template>
@@ -45,11 +50,11 @@ import Hero from "@/components/ui/svg/Hero.vue";
 }
 
 .hero__SVG {
-    @apply relative w-full md:w-[50%] h-auto pt-16 flex justify-center;
+    @apply relative w-full md:w-[45%] h-auto pt-16 flex justify-center;
 }
 
 .hero__text {
-    @apply flex flex-col items-start w-full md:w-[50%] h-auto py-0 md:py-8 gap-12 md:gap-16 flex-none;
+    @apply flex flex-col items-start w-full md:w-[55%] h-auto py-0 md:py-8 gap-12 md:gap-16 flex-none;
 }
 
 .hero__intro {
@@ -61,15 +66,15 @@ import Hero from "@/components/ui/svg/Hero.vue";
 }
 
 .hero__title {
-    @apply w-full font-bold text-4xl md:text-[2.5rem] text-[color:var(--foreground)] text-center md:text-left;
+    @apply w-full font-bold text-6xl text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__subtitle {
-    @apply w-full font-bold text-2xl md:text-[2rem] text-[color:var(--foreground)] text-center md:text-left;
+    @apply w-full font-bold text-6xl text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__description {
-    @apply w-full lg:w-[70%] font-normal text-base md:text-lg text-[color:var(--foreground)] text-center md:text-left;
+    @apply w-full md:w-[95%] font-normal text-base md:text-lg text-[color:var(--foreground)] text-center md:text-left;
 }
 
 .hero__highlight {
@@ -81,10 +86,10 @@ import Hero from "@/components/ui/svg/Hero.vue";
 }
 
 .hero__button {
-    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[184px] h-10 md:h-14 bg-[color:var(--primary)] border-2 border-[color:var(--primary)] cursor-pointer;
+    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[188px] h-10 md:h-12 border-2 border-[color:var(--border2)] cursor-pointer;
 }
 
 .hero__button-text {
-    @apply px-2 md:px-4 font-medium text-sm tracking-[0.5px] text-[color:var(--primary-foreground)];
+    @apply px-2 md:px-4 font-medium text-sm tracking-[0.5px];
 }
 </style>
