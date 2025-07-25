@@ -92,7 +92,6 @@
         </Transition>
     </header>
 </template>
-
 <script setup>
 import Button from "@/components/ui/button/Button.vue";
 import Brick from "@/components/ui/svg/Brick.vue";

@@ -33,7 +33,6 @@ import type { EmblaOptionsType } from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import Ava from '@/components/ui/svg/Avatar.vue'
 import testimonials from '@/assets/storage/testimonials.json'
-
 const carouselOptions: EmblaOptionsType = {
     loop: true,
     align: 'center',

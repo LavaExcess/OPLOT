@@ -1,8 +1,6 @@
 <template>
     <section class="info">
-        <!-- Обертка для основной карточки и сетки -->
         <div class="info__wrapper">
-            <!-- Основная карточка (слева) -->
             <div class="info__main-card">
                 <div class="info__card">
                     <div class="info__content">
@@ -12,7 +10,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="info__grid">
                 <div v-for="(card, index) in cards" :key="index" class="info__card">
                     <div class="info__image-placeholder"></div>
@@ -31,7 +28,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Модалка -->
         <section class="cards">
             <div v-if="isModalOpen" class="info__modal-backdrop" @click.self="closeModal">
@@ -44,7 +40,6 @@
         </section>
     </section>
 </template>
-
 <script setup>
 import Button from "@/components/ui/button/Button.vue"
 import Move from "@/components/ui/svg/ArrowMove.vue"
@@ -61,14 +56,12 @@ const openModal = (card) => {
     document.body.style.overflow = 'hidden'
     window.history.pushState({}, '', `/${card.urlId}`)
 }
-
 const closeModal = () => {
     isModalOpen.value = false
     selectedCard.value = null
     document.body.style.overflow = 'auto'
     window.history.pushState({}, '', '/')
 }
-
 onMounted(() => {
     const urlId = window.location.pathname.slice(1)
     if (urlId) {
