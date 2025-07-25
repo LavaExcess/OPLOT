@@ -1,0 +1,17 @@
+{
+    "menu": [
+        {
+            "label": "Преимущества",
+            "url": "/docs/introduction"
+        },
+        {
+            "label": "Галерея работ",
+            "url": "/gallery"
+        }
+    ],
+    "contacts": "Контакты",
+    "buttons": {
+        "login": "Личный кабинет",
+        "contact": "Связаться с нами"
+    }
+}
