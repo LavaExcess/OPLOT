@@ -93,7 +93,7 @@ const handleCardClick = (card) => {
 }
 
 .info__grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full md:w-full;
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-4 w-full md:w-full;
 }
 
 .info__card {
@@ -118,11 +118,11 @@ const handleCardClick = (card) => {
 }
 
 .info__card1-title {
-    @apply w-full font-bold text-5xl text-[color:var(--foreground)];
+    @apply w-full font-bold text-4xl text-[color:var(--foreground)];
 }
 
 .info__card1-text {
-    @apply w-full font-normal text-2xl text-[color:var(--foreground)];
+    @apply w-full font-normal text-xl text-[color:var(--foreground)];
 }
 
 

@@ -90,10 +90,10 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__nav--prev {
-    @apply left-[-50px];
+    @apply left-[-40px];
 }
 
 .carousel__nav--next {
-    @apply right-[-50px];
+    @apply right-[-40px];
 }
 </style>

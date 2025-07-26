@@ -35,7 +35,7 @@ import heroText from "@/assets/storage/hero.json"
 @import "tailwindcss";
 
 .hero {
-    @apply flex flex-col md:flex-row items-center px-4 md:px-20 py-12 md:py-[160px] gap-8 md:gap-20 w-full min-h-screen bg-[color:var(--background)] z-0;
+    @apply flex flex-col md:flex-row items-center mt-12  px-4 md:px-20 py-12 md:py-[160px] gap-8 md:gap-20 w-full min-h-screen bg-[color:var(--background)] z-0;
 }
 
 .hero__SVG {
@@ -48,7 +48,6 @@ import heroText from "@/assets/storage/hero.json"
 
 .hero__intro {
     @apply flex flex-col items-start w-full gap-6 md:gap-12 min-h-0;
-    /* убрана фиксированная высота */
 }
 
 .hero__heading-group {

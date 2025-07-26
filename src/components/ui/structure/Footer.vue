@@ -11,7 +11,8 @@
                         <Mail class="w-5 h-5" />
                     </div>
                     <input type="email" placeholder="Введите ваш email для подписки на нашу рассылку"
-                        class="footer__input" />
+                        class="footer__input hidden lg:block" />
+                    <input type="email" placeholder="Введите ваш email" class="footer__input lg:hidden" />
                 </div>
                 <Button>
                     <span class="footer__button-text">
@@ -80,7 +81,7 @@ import columns from '@/assets/storage/footer.json'
 }
 
 .footer__top {
-    @apply flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/30 pb-8;
+    @apply flex flex-col sm:flex-row justify-between items-center gap-6 border-b border-white/30 pb-8;
 }
 
 .footer__brand {
@@ -92,24 +93,24 @@ import columns from '@/assets/storage/footer.json'
 }
 
 .footer__sub {
-    @apply md:flex w-auto gap-4;
+    @apply sm:flex sm:flex-row flex flex-col w-full lg:max-w-[560px] max-w-[350px] gap-4 ;
 }
 
 .footer__form {
-    @apply flex w-full max-w-md bg-white rounded-md overflow-hidden;
+    @apply flex w-full bg-white;
 }
 
 .footer__form-icon {
-    @apply px-3 pt-1 md:pt-2 text-gray-500;
+    @apply px-3 pt-2  text-gray-500;
 }
 
 .footer__input {
-    @apply text-[color:var(--foreground)] outline-none md:w-[400px] w-[95%];
+    @apply text-[color:var(--foreground)] outline-none w-full h-8;
 }
 
 
 .footer__columns {
-    @apply grid grid-cols-1 md:grid-cols-4 gap-8 mt-10 border-b border-white/30 pb-8;
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 border-b border-white/30 pb-8;
 }
 
 .footer__column-title {
@@ -125,23 +126,25 @@ import columns from '@/assets/storage/footer.json'
 }
 
 .footer__apps {
-    @apply mt-4 flex gap-1;
+    @apply mt-4 lg:flex gap-1;
 }
 
-.footer__social {
-    @apply mt-4;
-}
+
 
 .footer__social-title {
     @apply font-semibold mb-2;
 }
 
 .footer__social-icons {
-    @apply flex gap-4 text-white/70;
+    @apply flex gap-3 text-white/70;
 }
 
 .footer__bottom {
     @apply flex flex-col md:flex-row justify-between items-center mt-8 text-sm text-white/60;
+}
+
+.footer__button-text {
+    @apply h-10 text-sm items-center flex;
 }
 
 .footer__bottom-links {

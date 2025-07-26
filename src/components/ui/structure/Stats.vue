@@ -64,11 +64,11 @@ const getIconComponent = (iconName) => {
 }
 
 .stats__title {
-    @apply w-full font-bold text-6xl text-center text-[color:var(--foreground)];
+    @apply w-full font-bold sm:text-4xl text-3xl text-center text-[color:var(--foreground)];
 }
 
 .stats__description {
-    @apply w-full font-normal text-4xl text-center text-[color:var(--foreground)] mt-2;
+    @apply w-full font-normal sm:text-2xl text-xl text-center text-[color:var(--foreground)] mt-2;
 }
 
 
