@@ -73,7 +73,7 @@ const getIconComponent = (iconName) => {
 
 
 .info-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8 w-2/3;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 w-[90%];
 }
 
 .feature-card {
@@ -91,7 +91,7 @@ const getIconComponent = (iconName) => {
 
 
 .hero__button {
-    @apply flex justify-center items-center px-3 py-2 w-[133px] md:w-[188px] h-10 md:h-12 border-2 border-[color:var(--border2)] cursor-pointer;
+    @apply flex justify-center items-center px-3 py-2 w-[200px] h-10 md:h-12 border-2 border-[color:var(--border2)] cursor-pointer;
 }
 
 .hero__button-text {

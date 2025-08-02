@@ -50,7 +50,7 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__wrap {
-    @apply w-full md:max-w-[820px] max-w-[297px];
+    @apply w-full md:max-w-[820px] max-w-[90%];
 }
 
 .carousel__content {
@@ -90,10 +90,10 @@ const carouselOptions: EmblaOptionsType = {
 }
 
 .carousel__nav--prev {
-    @apply left-[-40px];
+    @apply left-[-50px];
 }
 
 .carousel__nav--next {
-    @apply right-[-40px];
+    @apply right-[-50px];
 }
 </style>

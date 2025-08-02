@@ -14,7 +14,7 @@
                         class="footer__input hidden lg:block" />
                     <input type="email" placeholder="Введите ваш email" class="footer__input lg:hidden" />
                 </div>
-                <Button>
+                <Button class="footer__bottom ">
                     <span class="footer__button-text">
                         Подписаться
                     </span>
@@ -140,11 +140,11 @@ import columns from '@/assets/storage/footer.json'
 }
 
 .footer__bottom {
-    @apply flex flex-col md:flex-row justify-between items-center mt-8 text-sm text-white/60;
+    @apply cursor-pointer;
 }
 
 .footer__button-text {
-    @apply h-10 text-sm items-center flex;
+    @apply h-10 text-sm items-center flex ;
 }
 
 .footer__bottom-links {

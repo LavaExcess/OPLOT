@@ -1,16 +1,16 @@
 <template>
     <header class="header" ref="headerRef">
         <div class="header__container">
-            <NavigationMenu class="hidden md:block">
+            <NavigationMenu class="hidden md:block ">
                 <NavigationMenuList>
                     <NavigationMenuItem v-for="(item, index) in nav.menu" :key="index">
-                        <NavigationMenuLink :href="item.url" :class="navigationMenuTriggerStyle()">
+                        <NavigationMenuLink :href="item.url" class="header-blur">
                             {{ item.label }}
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger>{{ nav.contacts }}</NavigationMenuTrigger>
-                        <NavigationMenuContent class="bg-[color:var(--background)]">
+                        <NavigationMenuContent>
                             <ul class="grid  gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[800px]">
                                 <li v-for="item in items" :key="item.urlId">
                                     <NavigationMenuLink as-child>
@@ -49,55 +49,53 @@
                 <div class="header__burger-line" />
             </div>
         </div>
-        <Transition name="slide-down">
-            <NavigationMenu v-if="isMobileMenuOpen" class="lg:hidden">
-                <div class="header__mobile-menu" @click.stop>
-                    <NavigationMenuList class="flex flex-col">
-                        <div class="md:hidden flex justify-center">
-                            <NavigationMenuItem v-for="(item, index) in nav.menu" :key="index">
-                                <NavigationMenuLink :href="item.url">
-                                    {{ item.label }}
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>{{ nav.contacts }}</NavigationMenuTrigger>
-                                <NavigationMenuContent class="bg-[color:var(--background)]">
-                                    <ul class="grid  gap-3 p-4 w-[300px]">
-                                        <li v-for="item in items" :key="item.urlId">
-                                            <NavigationMenuLink as-child>
-                                                <a :href="item.urlId"
-                                                    class="block select-none space-y-1 rounded-md p-3">
-                                                    <div class="text-sm font-medium leading-none">{{ item.title }}</div>
-                                                    <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        {{ item.description }}
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                    </ul>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                        </div>
-                        <div class="header__nav lg:hidden flex justify-center">
-                            <Button class="header__button text-[color:var(--border2)] bg-[color:var(--background)] ">
-                                <span class="header__button-text ">{{ nav.buttons.login }}</span>
-                            </Button>
-                            <Button class="header__button bg-[color:var(--border2)] ">
-                                <span class="header__button-text">{{ nav.buttons.contact }}</span>
-                            </Button>
-                        </div>
-                    </NavigationMenuList>
-                </div>
-            </NavigationMenu>
-        </Transition>
     </header>
+    <Transition name="slide-down">
+        <NavigationMenu v-if="isMobileMenuOpen" class="lg:hidden ">
+            <div class="header__mobile-menu" @click.stop>
+                <NavigationMenuList class="flex flex-col ">
+                    <div class="md:hidden flex items-center justify-between ">
+                        <NavigationMenuItem v-for="(item, index) in nav.menu" :key="index">
+                            <NavigationMenuLink :href="item.url">
+                                {{ item.label }}
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger>{{ nav.contacts }}</NavigationMenuTrigger>
+                            <NavigationMenuContent class="bg-[color:var(--background)] top-[190px] fixed w-auto  ">
+                                <ul class="grid  gap-3 p-4  ">
+                                    <li v-for="item in items" :key="item.urlId">
+                                        <NavigationMenuLink as-child>
+                                            <a :href="item.urlId" class="block select-none space-y-1 rounded-md p-3">
+                                                <div class="text-sm font-medium leading-none">{{ item.title }}</div>
+                                                <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                    {{ item.description }}
+                                                </p>
+                                            </a>
+                                        </NavigationMenuLink>
+                                    </li>
+                                </ul>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
+                    </div>
+                    <div class="header__nav lg:hidden flex justify-center">
+                        <Button class="header__button text-[color:var(--border2)] bg-[color:var(--background)] ">
+                            <span class="header__button-text ">{{ nav.buttons.login }}</span>
+                        </Button>
+                        <Button class="header__button bg-[color:var(--border2)] ">
+                            <span class="header__button-text">{{ nav.buttons.contact }}</span>
+                        </Button>
+                    </div>
+                </NavigationMenuList>
+            </div>
+        </NavigationMenu>
+    </Transition>
 </template>
 <script setup>
 import Button from "@/components/ui/button/Button.vue";
 import Brick from "@/components/ui/svg/Brick.vue";
 import items from "@/assets/storage/items.json";
 import nav from "@/assets/storage/header.json";
-
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -116,17 +114,14 @@ const headerRef = ref(null);
 const toggleMobileMenu = () => {
     isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
-
 const closeMobileMenu = (event) => {
     if (isMobileMenuOpen.value && headerRef.value && !headerRef.value.contains(event.target)) {
         isMobileMenuOpen.value = false;
     }
 };
-
 onMounted(() => {
     document.addEventListener('click', closeMobileMenu);
 });
-
 onBeforeUnmount(() => {
     document.removeEventListener('click', closeMobileMenu);
 });
@@ -136,12 +131,12 @@ onBeforeUnmount(() => {
 @import "tailwindcss";
 
 .header {
-    @apply w-full fixed top-0 left-0 z-50 bg-[color:var(--background)] h-[72px];
+    @apply w-full fixed top-0 left-0 z-50 h-[72px] backdrop-blur-md;
     box-shadow: 0 1px 2px 0 hsl(var(--shadow-color));
 }
 
 .header__container {
-    @apply container mx-auto flex items-center justify-between h-full px-4 relative;
+    @apply container mx-auto flex items-center justify-between h-full px-4;
 }
 
 .header__branding {
@@ -177,6 +172,6 @@ onBeforeUnmount(() => {
 }
 
 .header__mobile-menu {
-    @apply fixed top-[70px] left-0 right-0 w-full shadow-md py-2 px-4 bg-[color:var(--background)] z-40;
+    @apply fixed top-[70px] left-0 right-0 w-[100vw] shadow-md py-2 px-4 z-40 backdrop-blur-md;
 }
 </style>
